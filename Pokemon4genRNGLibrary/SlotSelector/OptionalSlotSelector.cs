@@ -13,7 +13,7 @@ namespace Pokemon4genRNGLibrary
         private readonly ISlotSelector defaultSelector;
         public Slot<Pokemon.Species> SelectSlot(ref uint seed)
         {
-            if (seed.GetRand() / DPtDenominators.Rand100 < 50) return defaultSelector.SelectSlot(ref seed);
+            if (seed.GetRand() >> 15 == 0) return defaultSelector.SelectSlot(ref seed);
 
             seed.Advance();
             return specialSlot;
