@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemon4genRNGLibrary", "Pokemon4genRNGLibrary\Pokemon4genRNGLibrary.csproj", "{FC6FB28F-7444-4E72-9908-439B40F0292E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{E78A4D39-5FC8-4359-8D67-A0E984839341}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC6FB28F-7444-4E72-9908-439B40F0292E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6FB28F-7444-4E72-9908-439B40F0292E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6FB28F-7444-4E72-9908-439B40F0292E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6FB28F-7444-4E72-9908-439B40F0292E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E78A4D39-5FC8-4359-8D67-A0E984839341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E78A4D39-5FC8-4359-8D67-A0E984839341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E78A4D39-5FC8-4359-8D67-A0E984839341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E78A4D39-5FC8-4359-8D67-A0E984839341}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5DDB22C-7A41-493F-B522-8303A65AD719}
+	EndGlobalSection
+EndGlobal
