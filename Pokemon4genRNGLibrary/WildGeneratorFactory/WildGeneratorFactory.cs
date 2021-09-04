@@ -1,5 +1,6 @@
 ﻿using System;
 using Pokemon4genMapData;
+using PokemonStandardLibrary.PokeDex.Gen4;
 
 namespace Pokemon4genRNGLibrary
 {
@@ -71,7 +72,12 @@ namespace Pokemon4genRNGLibrary
 
         // 特に分岐はしなくて良いと思う.
         protected ISlotSelector GetDefaultSlotSelector()
-            => StandardSlotSelector.CreateInstance(default(TVersion).Unwrap(), mapData.EncounterTable);
+        {
+            var s = StandardSlotSelector.CreateInstance(default(TVersion).Unwrap(), mapData.EncounterTable);
+            if (mapData.OptionalSlots.Count > 0) return new OptionalSlotSelector(mapData.OptionalSlots[0].Convert(Pokemon.GetPokemon), s);
+
+            return s;
+        }
 
         // Grass系とそれ以外で分岐.
         protected ILvGenerator GetDefaultLvGenerator()
