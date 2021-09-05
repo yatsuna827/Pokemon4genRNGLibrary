@@ -82,9 +82,7 @@ namespace Pokemon4genRNGLibrary
         // Grass系とそれ以外で分岐.
         protected ILvGenerator GetDefaultLvGenerator()
         {
-            var v = default(TVersion).Unwrap();
-            var e = default(TEncType).Unwrap();
-            if (e == EncounterType.Grass || (int)v > 2 && (mapData.Type != MapType.OldRod || mapData.Type != MapType.GoodRod || mapData.Type != MapType.SuperRod))
+            if (default(TEncType).Unwrap() == EncounterType.Grass)
                 return FixedLvGenerator.GetInstance();
             else
                 return VariableLvGenerator.GetInstance();
