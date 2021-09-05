@@ -15,7 +15,7 @@ namespace Pokemon4genRNGLibrary
             var r = GetRand100(ref seed);
             foreach (var (thresh, slot) in encounterTable)
             {
-                if (r <= thresh) return slot;
+                if (r < thresh) return slot;
             }
 
             throw new Exception("未知のエラー");
