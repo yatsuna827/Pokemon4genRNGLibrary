@@ -51,7 +51,7 @@ namespace Pokemon4genRNGLibrary
         where TVersion : struct, IWrappedGameVersion
         where TEncType : struct, IWrappedEncounterType<TVersion>
     {
-        private readonly IMapData<TVersion, TEncType> mapData;
+        private protected readonly IMapData<TVersion, TEncType> mapData;
 
         public WildGeneratorFactory(IMapData<TVersion, TEncType> mapData)
             => this.mapData = mapData;
@@ -100,7 +100,7 @@ namespace Pokemon4genRNGLibrary
             => new StandardIndivGenerator(pidGenerator, holdItemSelector);
 
         protected WildGenerator BuildWildGenerator(IEncounterer encounterer, ISlotSelector slotSelector, ILvGenerator lvGenerator, IIndividualGeneratorFactory individualGeneratorFactory)
-            => new WildGenerator(encounterer, slotSelector, lvGenerator, individualGeneratorFactory);
+            => new WildGenerator(encounterer, slotSelector, lvGenerator, individualGeneratorFactory, (int)default(TVersion).Unwrap() < 2 ? 5 : 1u);
 
         public virtual WildGenerator Resolve()
         {

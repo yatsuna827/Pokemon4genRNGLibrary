@@ -28,7 +28,7 @@ namespace Pokemon4genRNGLibrary
             // ここでフレームレートを正確な値にすればいいのでは
             var d_sec = (uint)((long)frame * 10000 / 598261);
 
-            var year = frame - (uint)((long)(d_sec * 598261 + 9999) / 10000);
+            var year = frame - (uint)((d_sec * 598261L + 9999) / 10000);
             frame -= year;
 
             h8 = (h8 - (sec + d_sec) % 60) & 0xFF;
@@ -119,7 +119,7 @@ namespace Pokemon4genRNGLibrary
 
             // 実待機秒数
             var d_sec = (uint)((long)frame * 10000 / 598261);
-            if ((uint)((long)(d_sec * 598261 + 9999) / 10000) != frame) d_sec++;
+            if ((uint)((d_sec * 598261L + 9999) / 10000) != frame) d_sec++;
 
             //
             // 日付計算

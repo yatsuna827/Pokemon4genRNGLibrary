@@ -34,7 +34,7 @@ namespace Pokemon4genRNGLibrary
             private readonly ISlotSelector defaultSelector;
             public override Slot<Pokemon.Species> SelectSlot(ref uint seed)
             {
-                if ((seed.GetRand() >> 15) == 1) return defaultSelector.SelectSlot(ref seed);
+                if ((seed.GetRand() >> 15) == 1 || electricTable.Length == 0) return defaultSelector.SelectSlot(ref seed);
 
                 return electricTable[seed.GetRand((uint)electricTable.Length)];
             }
@@ -47,7 +47,7 @@ namespace Pokemon4genRNGLibrary
             private readonly ISlotSelector defaultSelector;
             public override Slot<Pokemon.Species> SelectSlot(ref uint seed)
             {
-                if ((seed.GetRand() & 1) == 1) return defaultSelector.SelectSlot(ref seed);
+                if ((seed.GetRand() & 1) == 1 || electricTable.Length == 0) return defaultSelector.SelectSlot(ref seed);
 
                 return electricTable[seed.GetRand((uint)electricTable.Length)];
             }

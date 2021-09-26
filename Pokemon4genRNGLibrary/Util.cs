@@ -29,7 +29,6 @@ namespace Pokemon4genRNGLibrary
                 default: return 0;
             }
         }
-
     }
 
     static class DPtDenominators

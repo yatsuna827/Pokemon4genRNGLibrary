@@ -11,4 +11,9 @@ namespace Pokemon4genRNGLibrary
         public uint HeadSeed { get; set; }
         public uint TailSeed { get; set; }
     }
+
+    public class RNGResult<TContent, TOption> : RNGResult<TContent>
+    {
+        public TOption Option { get; set; }
+    }
 }
